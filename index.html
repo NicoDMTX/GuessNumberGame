@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+
+    <title>Guees the number ici!</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Jeu: Devine le nombre que je pense</h1>
+        <div class="button-container">
+            <button class="start" id="start">START</button>
+            <button class="stop">STOP</button>
+        </div>
+
+        <p>Appuis sur sur start pour commencer la partie<br> bonne chance !</p>
+        <p id="indications">Je vais penser a un nombre de 1 à 100, propose moi un nombre. </p>
+
+        <div class="launch-container">
+            <input type="text" class="launch-input">
+            <button class="launch-btn" >Tester</button>
+        </div>
+
+        <div id="tentative-counter">0</div>
+        
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
