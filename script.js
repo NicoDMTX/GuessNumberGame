@@ -1,13 +1,17 @@
 const startButton = document.querySelector('#start');
+const stopButton = document.querySelector('#stop');
 const startParagraph = document.querySelector('p');
 const inputValue = document.querySelector('input')
 const indicationLabel = document.querySelector('#indications')
 const tentativeCounter = document.querySelector('#tentative-counter') 
+let tentativeNumber = 1;
 let count = 0;
 let randomNumber = getRandomNumber();
 
 startButton.addEventListener('click', () => {
     startGame();
+    console.log(randomNumber)
+    console.log(tentativeNumber)
 
     if (inputValue.value == randomNumber) {
         return indicationLabel.innerHTML = 'Vous avez gagné !'
@@ -28,18 +32,27 @@ function startGame() {
 }
 
 function stopGame() {
-
+    randomNumber = getRandomNumber();
+    tentativeNumber = 1;
+    tentativeCounter.innerHTML = 0;
+    inputValue.value = ''
 }
 
 function getRandomNumber() {
     min = Math.ceil(0);
     max = Math.floor(100);
-    return Math.floor(Math.random() * (100 - 0 + 1)); // max & min both included 
+    return Math.floor(Math.random() * (100 - 0 + 1));
   }
 
 function tentativecount() {
     count++
+    tentativeNumber++
     tentativeCounter.innerHTML = count
 }
 
-  
+stopButton.addEventListener('click', () => {
+    stopGame();
+    
+})
+
+console.log(randomNumber)
